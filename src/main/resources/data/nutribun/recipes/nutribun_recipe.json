@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "",
+  "ingredients": [
+    {"tag": "forge:milk"},
+    {"tag": "forge:eggs"},
+    {"tag": "forge:dusts/flour"},
+    {"tag": "forge:salt"}
+  ],
+  "result": {
+    "item": "nutribun:nutribun_item"
+  }
+}
