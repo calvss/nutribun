@@ -1,12 +1,13 @@
 {
   "homepage": "https://github.com/calvss/nutribun/releases/latest",
   "1.16.5": {
+    "0.3": "Added new icon",
     "0.2": "Added Forge update checker.\nAdded Diet integration.",
     "0.1": "Initial release."
   },
 
   "promos": {
-    "1.16.5-latest": "v0.2",
-    "1.16.5-recommended": "v0.2"
+    "1.16.5-latest": "v0.3",
+    "1.16.5-recommended": "v0.3"
   }
 }
