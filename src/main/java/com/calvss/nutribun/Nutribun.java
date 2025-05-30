@@ -1,22 +1,39 @@
 package com.calvss.nutribun;
 
+import com.calvss.nutribun.item.ModItems;
+
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod("nutribun")
+@Mod(Nutribun.MOD_ID)
 public class Nutribun {
-    public Nutribun() {
-        // Get an instance of the mod event bus
-        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public static final String MOD_ID = "nutribun";
+    public Nutribun()
+    {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        registerCommonEvents(modEventBus);
+        ModItems.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
+
+        MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::addCreative);
     }
 
-    /**
-     * Register common events for both dedicated servers and clients. This method is safe to call directly.
-     */
-    public void registerCommonEvents(IEventBus eventBus) {
-        eventBus.register(com.calvss.nutribun.nutribun_item.StartupCommon.class);
+    private void commonSetup(final FMLCommonSetupEvent event)
+    {
+    }
+
+    private void addCreative(BuildCreativeModeTabContentsEvent event)
+    {
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS)
+        {
+            event.accept(ModItems.NUTRIBUN_ITEM);
+        }
     }
 }
