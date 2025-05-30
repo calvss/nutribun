@@ -1,5 +1,9 @@
 {
   "homepage": "https://github.com/calvss/nutribun/releases/latest",
+  "1.20.1": {
+    "1.20.1.0": "Complete rewrite for Minecraft 1.20.1",
+  },
+  
   "1.16.5": {
     "0.3": "Added new icon",
     "0.2": "Added Forge update checker.\nAdded Diet integration.",
